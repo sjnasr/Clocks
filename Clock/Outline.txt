@@ -1,0 +1,60 @@
+Specifications to meet
+
+1. Write the code using C++ for Windows of PS4
+	Decision: Windows
+	Why?
+	Practice as well as write the program anywhere and everywhere I go
+
+2. Add comments from any non-obvious lines of code
+
+3. May have digital and/or analogue clock
+	Decision: Digital
+	Later: Do analogue if there is time
+	Extra feature: If time, ask user if they would like to display digital or analogue
+
+4. The clock may be graphical or/and text based
+	a. UI can ve graphical and/or command prompt
+	b. For command prompt, can't show previous times or scroll as time progresses
+
+5. The user interface must show current year, month, day, hour, minute and second [X]
+
+6. By default, the clock display will update every second [X]
+	a. Must be readable always (no flickering) [X]
+
+7. Must launch with configurable file [X]
+	a. Create a class to read/ create from file [X]
+	b. have a function to update when changes happen [X]
+
+8. Must have a configurable option to enable/disable a millisecond component to the time display [X]
+	The millisecond display will refresh as quickly as possible [IN PROGRESS]
+	The millisecond display must be readable (no flickering) [Will it is readable but there's a bug currently, spent too much time on trying to fix bug]
+
+9. THe user will be able to start a stopwatch style lap counter
+	a. When user presses a specific button or key, the clock will recoard and display the date and time that the event occurred. Lap start [X]
+	b. THe lap start time displayed will be seperate from the current time and display simultaneously [X]
+	c. WHen the user presses another specific button or key the clock will reconrd and the display the date and time of hte second event. Lap stop time [X]
+	d. The lock will then display the date and time difference between the 2 events [Skip for now]
+	e. The lock wil only display information for one lap at a time, no lap history [X]
+
+10. Allow user to enable logging of the date and time to a user specified file [GET AS MUCH DONE TODAY, SHOW THAT I CAN MODIFY FILES AND SUCH]
+	a. The logging rate/interval must be user configurable and all rates you choose to support must work 
+	b. The date and time must be logged in text (ASCII) format [X]
+	c. Each time log most be its own line in the log file [X]
+	d. The start, stop, and duration info for completed laps will be recorded to the log file
+	e. There will be a user configurable option to overwrite an existing log file or append to it [X]
+		i. This option will take effect when the application is next started
+	f. The log file lcoation/name does not have to be user configurable, but doing is optional
+		i. If enough time, then allow user to specify a location
+
+11. All user configurable options will be stored in a file [X]
+	a. The configuration file must be opened and read at application startup [X]
+	b. The user configurable options must be applied at application startup, unless overridden by the application's command line [X]
+	c. If user change configuration option from the application UI or command line, then the options must be written immediately and repalce the existing configuration options [X]
+	d. The configuration file location/name does not ahve to be user configurable but is optional.
+		i. If enough time, then make it configurable
+
+12. Must demostate callback functions and function pointers
+
+12. The code must demostrate OOD and make use of classes and constructors/destructors for object initialization
+
+13. Be mindful of design decisions
