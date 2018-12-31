@@ -1,6 +1,14 @@
 #pragma once
 #include <Windows.h>
 #include <string>
+
+struct config
+{
+	int loggingRate;
+	char logFile[256];
+	bool milliEnable;
+	bool logEnable;
+};
 class Configuration {
 private:
 	char millisecondEnable[4096];
@@ -18,6 +26,7 @@ public:
 	void setConfig(std::string key);
 	void setLoggingOptions(char input[]);
 	void readConfig();
+	void loadConfig();
 
 	//need a function to change string to bool
 	bool toBoolean(std::string str);

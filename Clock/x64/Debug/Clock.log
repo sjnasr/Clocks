@@ -1,0 +1,20 @@
+﻿  Clock.cpp
+  Configuration.cpp
+  Logging.cpp
+  main.cpp
+d:\otherdocuments\visualstudio\clock\clock\main.cpp(47): warning C4302: 'type cast': truncation from 'LPSTR' to 'WORD'
+d:\otherdocuments\visualstudio\clock\clock\main.cpp(52): warning C4302: 'type cast': truncation from 'LPSTR' to 'WORD'
+d:\otherdocuments\visualstudio\clock\clock\main.cpp(225): warning C4311: 'type cast': pointer truncation from 'HMENU' to 'UINT'
+d:\otherdocuments\visualstudio\clock\clock\main.cpp(225): warning C4302: 'type cast': truncation from 'HMENU' to 'UINT'
+d:\otherdocuments\visualstudio\clock\clock\main.cpp(229): warning C4311: 'type cast': pointer truncation from 'HMENU' to 'UINT'
+d:\otherdocuments\visualstudio\clock\clock\main.cpp(229): warning C4302: 'type cast': truncation from 'HMENU' to 'UINT'
+d:\otherdocuments\visualstudio\clock\clock\main.cpp(300): warning C4244: 'initializing': conversion from 'LRESULT' to 'int', possible loss of data
+d:\otherdocuments\visualstudio\clock\clock\main.cpp(317): warning C4244: 'initializing': conversion from 'LRESULT' to 'int', possible loss of data
+d:\otherdocuments\visualstudio\clock\clock\main.cpp(105): warning C4101: 'error': unreferenced local variable
+d:\otherdocuments\visualstudio\clock\clock\main.cpp(102): warning C4101: 'clearing': unreferenced local variable
+d:\otherdocuments\visualstudio\clock\clock\main.cpp(102): warning C4101: 'printLoggingMsgRect': unreferenced local variable
+d:\otherdocuments\visualstudio\clock\clock\main.cpp(437): warning C4244: 'return': conversion from 'WPARAM' to 'int', possible loss of data
+d:\otherdocuments\visualstudio\clock\clock\main.cpp(394): warning C4101: 'hWnd': unreferenced local variable
+  Generating Code...
+d:\otherdocuments\visualstudio\clock\clock\main.cpp(389): warning C4715: 'WndProc': not all control paths return a value
+  Clock.vcxproj -> D:\OtherDocuments\VisualStudio\Clock\x64\Debug\Clock.exe

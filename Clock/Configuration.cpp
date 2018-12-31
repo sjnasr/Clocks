@@ -1,7 +1,11 @@
 #include "Configuration.h"
 #include <sstream>
 #include <iostream>
+#include <fstream>
 using namespace std;
+
+//Refactor this
+
 
 //THIS CAN BE OPTIMIZED AND DONE IN A MORE EFFICIENT, BETTER WAY
 //Store path in a string
@@ -14,8 +18,8 @@ using namespace std;
 //Get basic logic down and make sure I can edit the values
 Configuration::Configuration() 
 {
-	/*OPTIMIZE THIS AREA USING FOR LOOP*/
-	readConfig();
+	/*OPTIMIZE THIS AREA USING FOR LOOP*/ 
+	loadConfig();
 
 	//Add a check for failure
 }
@@ -25,8 +29,10 @@ Configuration::~Configuration()
 	//Close ini file
 }
 
+/*ALREADY REFACTORED, remove readconfig everywhere*/
 void Configuration::readConfig()
 {
+	
 	long retVal = GetPrivateProfileString("Millisecond", "EnableMillisecond", "", millisecondEnable, 255, path);
 	retVal = GetPrivateProfileString("Logging", "EnableLogging", "", loggingEnable, 255, path); //WORKED YAY.
 	loggingRate = GetPrivateProfileInt("LoggingRate", "LoggingRate", 0, path);
@@ -38,6 +44,7 @@ void Configuration::readConfig()
 
 //Optimize
 //for boolean
+/*REFACTOR THIS*/
 void Configuration::setConfig(string key)
 {
 	if (key == "millisecondEnable") {
@@ -66,6 +73,7 @@ void Configuration::setConfig(string key)
 	
 }
 
+/*REFACTOR THIS*/
 void Configuration::setLoggingOptions(char input[])
 {
 	if (strcmp( "3 Minutes", input) == 0 /*&& loggingRate != 180000*/) //compare string and logging rate, if both are true then change value
@@ -104,4 +112,31 @@ bool Configuration::toBoolean(string str)
 	istringstream iss(str);
 	iss >> boolalpha >> changing;
 	return changing;
+}
+
+void Configuration::loadConfig()
+{
+	ifstream fin(".\\Configuration.ini");
+	string line;
+	config c;
+	while (getline(fin, line))
+	{
+		istringstream sin(line.substr(line.find('=') + 1));
+		if (line.find("EnableMillisecond") != -1)
+		{
+			sin >> c.milliEnable;
+		}
+		if (line.find("EnableLogging") != -1)
+		{
+			sin >> c.logEnable;
+		}
+		if (line.find("LoggingRate") != -1)
+		{
+			sin >> c.loggingRate;
+		}
+		if (line.find("LogFile") != -1)
+		{
+			sin >> c.logFile;
+		}
+	}
 }
